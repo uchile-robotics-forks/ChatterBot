@@ -52,7 +52,7 @@ class Trainer(object):
         result = []
         for statement in self.storage.filter():
             for response in statement.in_response_to:
-                result.append([response.text, statement.text])
+                result.append([response.text.encode("utf-8"), statement.text.encode("utf-8")])
 
         return result
 
